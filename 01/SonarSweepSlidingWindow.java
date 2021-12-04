@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 /**
- * Count the number of times the sum of a three-measurement slising window
- * increases.
+ * Read the list of depth measurements from the standard input using a
+ * three-measurement sliding window and count the number of times the sum of 
+ * values in this sliding window increases.
  */
 public class SonarSweepSlidingWindow {
   private static final int WINDOW_SIZE = 3;
@@ -10,6 +11,7 @@ public class SonarSweepSlidingWindow {
   public static void main(String[] args) {
     Scanner inputScanner = new Scanner(System.in);
 
+    // Read in the first three measurements.
     int[] window = new int[WINDOW_SIZE];
     int previousSum = 0;
     for (int i = 0; i < WINDOW_SIZE; i++) {
@@ -17,8 +19,9 @@ public class SonarSweepSlidingWindow {
       previousSum += window[i];
     }
 
+    // Read in the remaining measurements, shifting the "window" by one number
+    // at a time and count the number of times the sum increases.
     int increaseCount = 0;
-
     while (inputScanner.hasNextInt()) {
       int nextSum = previousSum - window[0];
 
@@ -35,6 +38,7 @@ public class SonarSweepSlidingWindow {
       
       previousSum = nextSum;
     }
+
     inputScanner.close();
 
     System.out.println(increaseCount);

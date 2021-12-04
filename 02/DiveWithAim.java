@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
 /**
- * After following a planned course, multiply the final horizontal position
- * by the final depth. Track the aim value.
+ * Submarine navigation simulation.
+ *
+ * Read a series of commands from the standard input and follow the planned
+ * course. Track the current horizontal position, depth, and aim value.
+ *
+ * Output the result of multiplying the final horizontal position and the final
+ * depth.
  */
 public class DiveWithAim {
   public static void main(String[] args) {

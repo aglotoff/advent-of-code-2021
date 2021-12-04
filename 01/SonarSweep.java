@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Count the number of times a depth measurement increases.
+ * Read the list of depth measurements from the standard input and count the
+ * number of times a measurement increases.
  */
 public class SonarSweep {
   public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class SonarSweep {
       }
       previous = next;
     }
+
     inputScanner.close();
 
     System.out.println(increaseCount);
